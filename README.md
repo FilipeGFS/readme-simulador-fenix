@@ -162,7 +162,8 @@ Outputs:
 
 The safety margin is important to ensure that the motor will resist the Von Mises stress. It is calculated as in the next picture:
 
-![image](https://user-images.githubusercontent.com/119083049/205351601-d8bd2dbb-2182-443f-8dde-c85dac0ea8ef.png)
+![image](https://user-images.githubusercontent.com/119083049/205365465-fa6fc29d-c934-4e6b-b135-8a4dd89e27c1.png)
+
 
 *Safety margin calculus*
 
