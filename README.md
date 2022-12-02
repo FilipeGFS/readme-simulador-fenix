@@ -215,12 +215,16 @@ With this part of the code, we're able to simulate properly, as we wanted.
 
 [1] Samuel Renan Costa Morais. Metodologia Para C ́alculo Estrutural de Motor de Foguete de Propelente S ́olido.
 Belo Horizonte/MG, 2021.
+
 [2] J. Barrowman. The practical calculation of the aerodynamic characteristics of slender finned vehicles. M.Sc.
 thesis, The Catholic University of America, 1967.
+
 [3] Sampo Niskanen. Openrocket technical documentation. Available at https://openrocket.info/
 documentation.html (2021/11/10), 2013.
+
 [4] Ma ́ıra Fernanda Oliveira de Miranda. DESENVOLVIMENTO DE UM SISTEMA DE RECUPERAC ̧AO ̃
 PARA UM MINIFOGUETE, Uberlˆandia 2021.
+
 [5] Gary Peek Jean Potvin. OSCALC: Opening Shock Calculator, julho 2006.
 
 
