@@ -6,7 +6,7 @@ This program is a free and open access simulator for model rocketry. With this s
 obtaining important data about it, such as drag force, different drag coefficient types, the position of center of pression, trajectory expected, stress
 data and so much more. By reading this document, you are going to be able to understand how to use this simulator, as well as what it calculates, what inputs 
 it needs and what outputs it returns.
-Thus, this document will be divided in the following topics, defined according to the folders and archives of the project:
+Thus, this document is divided in the following topics, defined according to the folders and archives of the project:
 + Data
 + Utils
 + Physics
@@ -193,7 +193,7 @@ It generates a subclass of AbstractAmbient which comprehends an environment of a
 Just as the other classes, this is a subclass of AbstractAmbient. It is similar to the previous file, but this Earth has a 'little' difference:
 it has atmosphere.
 
-![image](https://user-images.githubusercontent.com/119083049/205358530-b8f7d806-fe50-475a-9817-c9e44d52eeec.png)
+![image](https://user-images.githubusercontent.com/119083049/205398534-611817f8-7306-4d50-a9b7-56acd44dde18.png)
 
 *Airfull Earth code*
 
