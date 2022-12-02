@@ -141,7 +141,7 @@ Inputs:
 +**'safety_margin'**
 +**'material'**: material used to build the motor
 
-Outputs:
+Output:
 + **'von_Mises_stress'**: von Mises stress calculated in it's own method
 
 For this calculus, the safety margin is not a necessary input. Once the safety margin depends on Von Mises stress for being calculated, the
