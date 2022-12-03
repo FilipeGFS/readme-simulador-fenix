@@ -64,8 +64,9 @@ Some examples of operations using the class **Vector**:
 ### forces
 The folder that contains all the forces applied to the rocket through its trajectory, such as: drag, weight and wind force. All classes in this folder inherit from the **Vector** class, so they will all be treated as vectors, having their methods, as they should be.
 
-### delta_time_simulation
-It contains the DeltaTimeSimulation class, which represents the state of the rocket at a given time instant.
+*delta_time_simulation:*
+<p>It contains the DeltaTimeSimulation class, which represents the state of the rocket at a given time. Its only use is to get this information 
+information in a practical way.</p>
 
 ## Aerodynamic
 
