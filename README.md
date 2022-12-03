@@ -47,8 +47,21 @@ data. We also have codes with fundamental constants needed and wind information 
 
 
 *Wind direction class code*
+<p align = "center">
+  <img src= "https://user-images.githubusercontent.com/92520893/205438398-9d39c119-bc8a-4aa3-93d1-9287b9f822d9.jpeg">
+</p>
 
 ### Physics
+Physics is a very important folder for the project, being responsible for bringing together most of the variables and functions that operate basic physics, or classical mechanics as it is commonly called. This section holds the programming that deals with the forces applied to the rocket, as well as vectors, which orient the forces and their direction, torque, coordinates, and more.
+
+#### vector
+The vector archive contains all the methods that deals with vector, like getting the scalar or vectorial product of two vectors, sum and subtraction of vectors, and the magnitude also.
+
+#### forces
+The folder that contains all the forces applied to the rocket through its trajectory, such as: drag, weight and wind force. All classes in this folder inherit from the Vector class, so they will all be treated as vectors, having their methods, as they should be.
+
+#### delta_time_simulation
+It contains the DeltaTimeSimulation class, which represents the state of the rocket at a given time instant.
 
 ### Aerodynamic
 
