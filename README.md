@@ -110,12 +110,6 @@ def calculate(self, current_state: DeltaTimeSimulation):
 This file contains the ResultantTorque class, responsible for receiving a list of torques and using them to calculate the resultant torque at the indicated time "t". The list of torques MUST be ordered with the least dependent torques coming first, as changing the order can change the final result, with torques being calculated without having their dependent torques calculated properly. The change attenuates by decreasing *DELTA_TIME_SIMULATION*.
 
 ~~~python
-class ResultantForce(Force):
-    def __init__(self, forces: List[Force]):
-        self.__forces = forces 
-        # List of forces that MUST be ordered from most independent to least independent
-        super().__init__(0, 0, 0, ApplicationPoint.CG)
-
 class ResultantTorque(Vector):
     def __init__(self, forces: List[Force], additional_torques=[]):
         self.__forces = forces
