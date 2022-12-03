@@ -24,7 +24,7 @@ following table:
 | Cables | Types of cables |
 | Materials | Several materials for the model and its properties, such as aluminum, carbon fiber, etc. |
 | Parachutes | Different kinds of parachute, depending on its geometry, with the info of its drag coefficient |
-| Propellants | Three distinct propellant types with their trcnical features |
+| Propellants | Three distinct propellant types with their tecnical features |
 
 
 ![image](https://user-images.githubusercontent.com/119083049/205334940-a6ef751c-301f-4e05-b510-16c5f3a45f61.png)
