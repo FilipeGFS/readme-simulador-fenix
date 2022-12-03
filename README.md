@@ -254,7 +254,7 @@ Inputs:
 
 With all these methods, we're able to determine a lot of important things for simulation and for checking rocket properties.
 
-### Simulation
+## Simulation 🖥️
 
 This folder is responsible for creating objects and abstract classes indispensable for the simulation and for making the simulations itself.
 Its activities are accomplished by the codes that will be described next.
@@ -296,7 +296,20 @@ simulation. This class has a lot of especial functions that will be briefly desc
 
 With this part of the code, we're able to simulate properly, as we wanted.
 
-## References used in this project
+## Accessing the Project 🖿
+<p>You can access the project directly in it's <a href="https://github.com/Rocket-Simulator/RocketSimulator" target="_blank">repository on github</a>. Or
+  you can donwload it in a paste of your choice:
+</p>
+
+[1] First, copy the link of the repository https://github.com/Rocket-Simulator/RocketSimulator.
+
+[2] Then, click with the right button inside the paste you wanna put it, and select the **Git Bash Here** option.
+
+[3] Inside the open terminal, digit *git clone* and then paste the link copied.
+
+[4] Press Enter and in a few secconds it's done!
+
+## References used in this project 📚
 
 [1] Samuel Renan Costa Morais. Metodologia Para C ́alculo Estrutural de Motor de Foguete de Propelente S ́olido.
 Belo Horizonte/MG, 2021.
