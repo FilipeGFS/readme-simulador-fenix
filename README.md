@@ -16,7 +16,7 @@ Thus, this document is divided in the following topics, defined according to the
 + Structure
 + Simulation
 
-### Data
+## Data
 The data folder contains some primordial information for the project, with files in JSON format. It is subdivided in folders with the type of data of the 
 following table:
 | Folder | Content |
@@ -35,7 +35,7 @@ following table:
 
 *Example of data in 'propellants' folder*
 
-### Utils
+## Utils
 In 'utils', we have important content simulation, like archives which contain classes for grouping related data, like parachute, nose type, rocket parts
 data. We also have codes with fundamental constants needed and wind information for simulation.
 
@@ -51,33 +51,33 @@ data. We also have codes with fundamental constants needed and wind information 
   <img src= "https://user-images.githubusercontent.com/92520893/205438398-9d39c119-bc8a-4aa3-93d1-9287b9f822d9.jpeg">
 </p>
 
-### Physics
+## Physics
 Physics is a very important folder for the project, being responsible for bringing together most of the variables and functions that operate basic physics, or classical mechanics as it is commonly called. This section holds the programming that deals with the forces applied to the rocket, as well as vectors, which orient the forces and their direction, torque, coordinates, and more.
 
-#### vector
+### vector
 The vector archive contains all the methods that deals with vector, like getting the scalar or cross product of two vectors, sum and subtraction of vectors, and the magnitude also.
 
 Some examples of operations using the class **Vector**:
 
 <img src="https://user-images.githubusercontent.com/92520893/205452599-0f47b5c9-0bb3-42b7-926a-bb99e8648efb.jpeg">
 
-#### forces
+### forces
 The folder that contains all the forces applied to the rocket through its trajectory, such as: drag, weight and wind force. All classes in this folder inherit from the **Vector** class, so they will all be treated as vectors, having their methods, as they should be.
 
-#### delta_time_simulation
+### delta_time_simulation
 It contains the DeltaTimeSimulation class, which represents the state of the rocket at a given time instant.
 
-### Aerodynamic
+## Aerodynamic
 
-### Propulsion
+## Propulsion
 
-### Recovery
+## Recovery
 
-### Structure
+## Structure
 The Structure folder holds codes for the calculus of diverse tension and stress types, as well as of information got from the input dimensions of the
 rocket and safety margin. Next, we will describe each code archive of this folder, its inputs and outputs.
 
-#### 1. *Parameter a* code
+### 1. *Parameter a* code
 Inputs: 
 + **'external_radius'**
 +**'internal_radius'**
@@ -94,7 +94,7 @@ The manners to calculate the 'parameter a' are shown below:
 
 *Code for calculus of parameter a.*
 
-#### 2. *Thin walls check* code
+### 2. *Thin walls check* code
 Inputs:
 + **'external_radius'**
 +**'internal_radius'**
@@ -106,7 +106,7 @@ This technical feature will be important for some following calculus and is dete
 
 ![image](https://user-images.githubusercontent.com/119083049/205354985-0f1eefdf-2225-4bfc-b759-3568199f8080.png)
 
-#### 3. *Circumferential tension* code
+### 3. *Circumferential tension* code
 Inputs:
 + **'parameter_a'**: the relation between motor external and internal radius.
 + **'vessel_maximum_pressure'**: maximum pressure inside motor due to ignition of fuel grain.
@@ -116,7 +116,7 @@ Outputs:
 
 This code calculates the circumferetial tension expected to act on motor thin walls.
 
-#### 4. *External radius* code
+### 4. *External radius* code
 Inputs:
 + **'parameter_a'**
 + **'internal_radius'**
@@ -126,7 +126,7 @@ Outputs:
 
 As you might imagine, this code returns the external radius for the motor of the rocket.
 
-#### 5. *Longitudinal tension* code
+### 5. *Longitudinal tension* code
 Inputs:
 + **'parameter_a'**
 + **'vessel_maximum_pressure'**
@@ -141,7 +141,7 @@ $VMP / (2*(a - 1))$
 
 *VMP: 'Vessel Maximum Pressure'*
 
-#### 6. *Radial tension* code
+### 6. *Radial tension* code
 Inputs:
 + **'parameter_a'**
 + **'vessel_maximum_pressure'**
@@ -151,7 +151,7 @@ Outputs:
 
 With a thin walls motor, this function always returns 0.
 
-#### 7. *Von Mises stresss* code
+### 7. *Von Mises stresss* code
 Inputs:
 + **'parameter_a'**
 +**'vessel_maximum_pressure'**
@@ -169,7 +169,7 @@ Von Mises Stress will be recalculated after obtaining the safety margin. Said th
 *Von Mises stress calculus*
 
 
-#### 8. *Safety margin* code
+### 8. *Safety margin* code
 Inputs:
 + **'von_Mises_stress'**
 + **'material'**
@@ -184,7 +184,7 @@ The safety margin is important to ensure that the motor will resist the Von Mise
 
 *Safety margin calculus*
 
-#### 9. *Thickness* code
+### 9. *Thickness* code
 Inputs:
 + **'external_radius'**
 +**'internal_radius'**
@@ -196,17 +196,17 @@ With all these methods, we're able to determine a lot of important things for si
 This folder is responsible for creating objects and abstract classes indispensable for the simulation and for making the simulations itself.
 Its activities are accomplished by the codes that will be described next.
 
-#### 1. *Abstract ambient* code
+### 1. *Abstract ambient* code
 This file creates a superclass for the other ambients needed. It receives a list of forces for the construction of the ambient. 
 
-#### 2. *Airless earth ambient* code
+### 2. *Airless earth ambient* code
 It generates a subclass of AbstractAmbient which comprehends an environment of an airless earth and uses the *'physics'* codes.
 
 ![image](https://user-images.githubusercontent.com/119083049/205357761-2600c612-d2b9-4ef1-85f3-0ed59c2f1cc8.png)
 
 *Airless earth code*
 
-#### 3. *Earth ambient* code
+### 3. *Earth ambient* code
 Just as the other classes, this is a subclass of AbstractAmbient. It is similar to the previous file, but this Earth has a 'little' difference:
 it has atmosphere.
 
@@ -214,7 +214,7 @@ it has atmosphere.
 
 *Airfull Earth code*
 
-#### 4. *Simulation* code
+### 4. *Simulation* code
 This is the most extensive code of this folder and is responsible for the simulation itself. in the 'simulation' class, it coordinates the physics
 simulation. This class has a lot of especial functions that will be briefly described in the ensuing table:
 
@@ -229,7 +229,7 @@ simulation. This class has a lot of especial functions that will be briefly desc
 
 With this part of the code, we're able to simulate properly, as we wanted.
 
-### References used in this project
+## References used in this project
 
 [1] Samuel Renan Costa Morais. Metodologia Para C ́alculo Estrutural de Motor de Foguete de Propelente S ́olido.
 Belo Horizonte/MG, 2021.
