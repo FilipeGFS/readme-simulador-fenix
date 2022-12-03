@@ -57,15 +57,6 @@ data. We also have codes with fundamental constants needed and wind information 
 ## Physics ⚛️
 
 Physics is a very important folder for the project, being responsible for bringing together most of the variables and functions that operate basic physics, or classical mechanics as it is commonly called. This section holds the programming that deals with the forces applied to the rocket, as well as vectors, which orient the forces and their direction, torque, coordinates, and more.
-
-### vector
-
-The vector archive contains all the methods that deals with vector, like getting the scalar or cross product of two vectors, sum and subtraction of vectors, and the magnitude also.
-
-Some examples of operations using the class **Vector**:
-
-<img src="https://user-images.githubusercontent.com/92520893/205452599-0f47b5c9-0bb3-42b7-926a-bb99e8648efb.jpeg">
-
 ### forces
 
 The folder that contains all the forces applied to the rocket through its trajectory, such as: drag, weight and wind force. All classes in this folder inherit from the **Vector** class, so they will all be treated as vectors, having their methods, as they should be.
@@ -145,6 +136,16 @@ def calculate(self, current_state: DeltaTimeSimulation):
         self.setY(resultant_torque.y())
         self.setZ(resultant_torque.z())
 ~~~
+
+
+
+### vector
+
+The vector archive contains all the methods that deals with vector, like getting the scalar or cross product of two vectors, sum and subtraction of vectors, and the magnitude also.
+
+Some examples of operations using the class **Vector**:
+
+<img src="https://user-images.githubusercontent.com/92520893/205452599-0f47b5c9-0bb3-42b7-926a-bb99e8648efb.jpeg">
 
 ## Aerodynamic ✈️
 
@@ -338,7 +339,7 @@ With this part of the code, we're able to simulate properly, as we wanted.
 
 ## Accessing th Project 🖿
 
-[1] First, copy the link to the repository https://github.com/Rocket-Simulator/RocketSimulator.
+[1] First, copy the link to the repository <https://github.com/Rocket-Simulator/RocketSimulator>.
 
 [2] Next, right-click inside the folder you want to put, and select the Git Bash Here option.
 
