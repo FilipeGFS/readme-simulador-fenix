@@ -58,7 +58,7 @@ Physics is a very important folder for the project, being responsible for bringi
 The vector archive contains all the methods that deals with vector, like getting the scalar or vectorial product of two vectors, sum and subtraction of vectors, and the magnitude also.
 
 #### forces
-The folder that contains all the forces applied to the rocket through its trajectory, such as: drag, weight and wind force. All classes in this folder inherit from the Vector class, so they will all be treated as vectors, having their methods, as they should be.
+The folder that contains all the forces applied to the rocket through its trajectory, such as: drag, weight and wind force. All classes in this folder inherit from the **Vector** class, so they will all be treated as vectors, having their methods, as they should be.
 
 #### delta_time_simulation
 It contains the DeltaTimeSimulation class, which represents the state of the rocket at a given time instant.
