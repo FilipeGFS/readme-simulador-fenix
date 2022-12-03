@@ -104,6 +104,53 @@ def calculate(self, current_state: DeltaTimeSimulation):
         self.setZ(resultant_force.z())
 ~~~
 
+### resultant_torque
+
+This file contains the ResultantTorque class, responsible for receiving a list of torques and using them to calculate the resultant torque at the indicated time "t". The list of torques MUST be ordered with the least dependent torques coming first, as changing the order can change the final result, with torques being calculated without having their dependent torques calculated properly. The change attenuates by decreasing *DELTA_TIME_SIMULATION*.
+
+~~~python
+class ResultantForce(Force):
+    def __init__(self, forces: List[Force]):
+        self.__forces = forces 
+        # List of forces that MUST be ordered from most independent to least independent
+        super().__init__(0, 0, 0, ApplicationPoint.CG)
+
+class ResultantTorque(Vector):
+    def __init__(self, forces: List[Force], additional_torques=[]):
+        self.__forces = forces
+        self.__additional_torques = additional_torques
+        # List of torques that MUST be ordered from most independent to least independent
+        super().__init__(0, 0, 0)
+~~~
+
+Still within the class, we have the method that effectively performs the calculation of the resultant torque, respecting all the peculiarities and dependencies of the other related torques.
+
+~~~python
+# Args: 'current_state: DeltaTimeSimulation' = Current state of the rocket.
+def calculate(self, current_state: DeltaTimeSimulation):
+        # Following the order of dependency of forces
+        for force in self.__forces:
+            force.calculate(current_state)
+
+        resultant_torque = Vector(0, 0, 0)
+        for force in self.__forces:
+            if force.application_point == ApplicationPoint.CG:
+                continue
+            
+            lever = current_state.cg - current_state.cp
+            torque = Vector.crossProduct(force, lever)
+            resultant_torque += torque
+
+        for torque in self.__additional_torques:
+            torque.calculate(current_state)
+            resultant_torque += torque
+
+        # Defines the resultant torque in each of the directions
+        self.setX(resultant_torque.x())
+        self.setY(resultant_torque.y())
+        self.setZ(resultant_torque.z())
+~~~
+
 ## Aerodynamic ✈️
 
 ## Propulsion 🚀
