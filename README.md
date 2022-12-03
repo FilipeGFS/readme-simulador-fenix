@@ -63,6 +63,9 @@ The folder that contains all the forces applied to the rocket through its trajec
 #### delta_time_simulation
 It contains the DeltaTimeSimulation class, which represents the state of the rocket at a given time instant.
 
+### resultant_force
+This file contains the ResultantForce class, responsible for receiving a list of forces and using them to calculate the resultant force at the indicated time "t". The list of forces MUST be ordered with the least dependent forces coming first, as changing the order can change the final result, with forces being calculated without having their dependent forces calculated properly. The change attenuates by decreasing ˋDELTA_TIME_SIMULATIONˋ .
+
 ### Aerodynamic
 
 ### Propulsion
