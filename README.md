@@ -9,14 +9,16 @@ data and so much more. By reading this document, you are going to be able to und
 it needs and what outputs it returns.
 Thus, this document is divided in the following topics, defined according to the folders and archives of the project:
 
-+ Data
-+ Utils
-+ Physics
-+ Aerodynamic
-+ Propulsion
-+ Recovery
-+ Structure
-+ Simulation
+## Summary
+
+- <a href="#data">Data</a>
+- <a href="#utils">Utils</a>
+- <a href="#physics">Physics</a>
+- <a href="#aerodynamic">Aerodynamic</a>
+- <a href="#propulsion">Propulsion</a>
+- <a href="#recovery">Recovery</a>
+- <a href="#structure">Structure</a>
+- <a href="#simulation">Simulation</a>
 
 ## Data 💾
 
@@ -119,14 +121,14 @@ rocket and safety margin. Next, we will describe each code archive of this folde
 
 Inputs:
 
-+ **'external_radius'**
+- **'external_radius'**
 +**'internal_radius'**
 +**'vessel_maximum_pressure'**
 +**'von_Mises_stress'**
 
 Outputs:
 
-+ **'parameter_a'**: the relation between motor external and internal radius.
+- **'parameter_a'**: the relation between motor external and internal radius.
 
 This property of the motor can be calculated by different ways using different combinations of the inputs. Therefore, not all inputs are necessary.
 The manners to calculate the 'parameter a' are shown below:
@@ -139,7 +141,7 @@ The manners to calculate the 'parameter a' are shown below:
 
 Inputs:
 
-+ **'external_radius'**
+- **'external_radius'**
 +**'internal_radius'**
 
 Outputs:
@@ -153,12 +155,12 @@ This technical feature will be important for some following calculus and is dete
 
 Inputs:
 
-+ **'parameter_a'**: the relation between motor external and internal radius.
-+ **'vessel_maximum_pressure'**: maximum pressure inside motor due to ignition of fuel grain.
+- **'parameter_a'**: the relation between motor external and internal radius.
+- **'vessel_maximum_pressure'**: maximum pressure inside motor due to ignition of fuel grain.
 
 Outputs:
 
-+ **'circumferential_tension'**
+- **'circumferential_tension'**
 
 This code calculates the circumferetial tension expected to act on motor thin walls.
 
@@ -166,12 +168,12 @@ This code calculates the circumferetial tension expected to act on motor thin wa
 
 Inputs:
 
-+ **'parameter_a'**
-+ **'internal_radius'**
+- **'parameter_a'**
+- **'internal_radius'**
 
 Outputs:
 
-+ **'external_radius'**
+- **'external_radius'**
 
 As you might imagine, this code returns the external radius for the motor of the rocket.
 
@@ -179,12 +181,12 @@ As you might imagine, this code returns the external radius for the motor of the
 
 Inputs:
 
-+ **'parameter_a'**
-+ **'vessel_maximum_pressure'**
+- **'parameter_a'**
+- **'vessel_maximum_pressure'**
 
 Outputs:
 
-+ **'longitudinal_tension'**: the longitudinal tension that will act on motor thin walls.
+- **'longitudinal_tension'**: the longitudinal tension that will act on motor thin walls.
 
 This parameter is important to know if the motor walls will resist the tension applied to it, and it is calculated with the following
 expression:
@@ -197,12 +199,12 @@ $VMP / (2*(a - 1))$
 
 Inputs:
 
-+ **'parameter_a'**
-+ **'vessel_maximum_pressure'**
+- **'parameter_a'**
+- **'vessel_maximum_pressure'**
 
 Outputs:
 
-+ **0**: radial tension in motor considered to have thin walls is always zero.
+- **0**: radial tension in motor considered to have thin walls is always zero.
 
 With a thin walls motor, this function always returns 0.
 
@@ -210,14 +212,14 @@ With a thin walls motor, this function always returns 0.
 
 Inputs:
 
-+ **'parameter_a'**
+- **'parameter_a'**
 +**'vessel_maximum_pressure'**
 +**'safety_margin'**
 +**'material'**: material used to build the motor
 
 Output:
 
-+ **'von_Mises_stress'**: von Mises stress calculated in it's own method
+- **'von_Mises_stress'**: von Mises stress calculated in it's own method
 
 For this calculus, the safety margin is not a necessary input. Once the safety margin depends on Von Mises stress for being calculated, the
 Von Mises Stress will be recalculated after obtaining the safety margin. Said that, this parameter is acquired this way:
@@ -230,12 +232,12 @@ Von Mises Stress will be recalculated after obtaining the safety margin. Said th
 
 Inputs:
 
-+ **'von_Mises_stress'**
-+ **'material'**
+- **'von_Mises_stress'**
+- **'material'**
 
 Outputs:
 
-+ safety_margin of the built motor
+- safety_margin of the built motor
 
 The safety margin is important to ensure that the motor will resist the Von Mises stress. It is calculated as in the next picture:
 
@@ -247,7 +249,7 @@ The safety margin is important to ensure that the motor will resist the Von Mise
 
 Inputs:
 
-+ **'external_radius'**
+- **'external_radius'**
 +**'internal_radius'**
 
 With all these methods, we're able to determine a lot of important things for simulation and for checking rocket properties.
