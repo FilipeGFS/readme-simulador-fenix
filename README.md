@@ -430,10 +430,12 @@ True or False
 The code here has two parts, one that determines the cable tension that the recovery is making in each hope, and the second part compares this value to the resistance of the cables, returning True if it is suposed to break or false if it doesn´t.
 
 ![image](https://user-images.githubusercontent.com/98179873/205506181-5c6312a0-eda5-457c-9c64-7ea5b193af0f.png)
-The materials of cables supported by the actual code
+
+*The materials of cables supported by the actual code*
 
 ![image](https://user-images.githubusercontent.com/98179873/205506209-bf5b0d76-3997-4f03-b579-e12ce3406025.png)
-The code that tests the cables based on the maximum force.
+
+*The code that tests the cables based on the maximum force*
 
 ## Structure 🧱
 
