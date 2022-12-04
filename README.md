@@ -195,23 +195,23 @@ By manipulating the parameters of cilinder length, cilinder diameter, reference 
 *Lift effect code*
 
 
-### 6. Mach Number
+### 6. *Mach Number* code
 A simple method to return the mach number, important for the calculations ahead, using the velocity of the rocket divided by the local sound velocity.
 
 <img src="https://user-images.githubusercontent.com/92520893/205469116-3ea97332-1964-4c54-a941-74c268e58308.png">
 
-### 7. Nose Pressure Drag
+### 7. *Nose Pressure Drag* code
 If the transition batween the body of the rocket and the nose is smooth, the nose pressure drag coefficient is equal to zero. But if the transition has a conical shape, "bodynoseAngle" will be an argument used to calculate the pressure drag on the nose.
 
-### 8. Reynoulds Number
+### 8. *Reynoulds Number* code
 Reynolds number is used to determine the type of flow pattern as laminar or turbulent while flowing through a pipe, and it's calculated by the **reynolds_number** method. It's a simple file in the project, but very important.
 
 <img src="https://user-images.githubusercontent.com/92520893/205469174-2e62b19e-66b9-4380-9916-ecaf6dd3eafa.png">
 
-### 9. Skin Friction
+### 9. *Skin Friction* code
 This file will return the drag coefficient according to the mach number, using the reynolds number, and will not be able to do so if the rocket is supersonic.
 
-### 10. Total Skin Friction Drag Coefficient
+### 10. *Total Skin Friction Drag Coefficient* code
 Finally, using the drag coefficient collected with the work of the two programs above, this method will return the total friction drag coefficient applied on the full body of the rocket.
 
 <img src="https://user-images.githubusercontent.com/92520893/205469183-6f401e2e-0697-4efc-97fa-06917c96f901.png">
