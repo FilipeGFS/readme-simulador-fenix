@@ -223,40 +223,76 @@ Finally, using the drag coefficient collected with the work of the two programs 
 ### 1. Weight Force
 the weight force is the product of the mass and the gravity acceleration, as described by the second Newton's Law
 
+Inputs:
++ **'mass'**
++**'gravity'**
+
+the weight is a  basical variable for other calculations
+
+Outputs:
++ **'Weight_force'**
+
 ### 2. Velocity
 the velocity on the vertical axis, based on the initial velocity when the parachute is deployed and for the acceleration resultant from the forces calculated.
+
+Inputs:
++ **'
 
 ### 3. Time
 the time is defined by the remaining time from the height where the parachute is ejectred until the rocket touches the ground
 
+Inputs:
+
 ### 4. Max range
 Max range is basically an calculation using the parameters from velocity and the time to make an aproximation for the maximum range of distance that the rocket can go when falling
 
+Inputs:
+
 ### 5. Acceleration
+the acceleration that affects the rocket is described by the Second Newton's Law 
+
+Inputs:
 
 ### 6. Nominal Diameter
 
+Inputs:
+
 ### 7. Mass Ratio
+
+Inputs:
 
 ### 8. Momentum
 
+Inputs:
+
 ### 9. Normalized integral 
+
+Inputs:
 
 ### 10. Inflation time
 
+Inputs:
+
 ### 11. General inflation time
+
+Inputs:
 
 ### 12. Drag force
 
+Inputs:
+
 ### 13. Opening shock
 
+Inputs:
+
 ### 14. Maximum force
+
+Inputs:
 
 ### 15. Cable tension
 Returns the boleans based on the relation for the maximum force and the maximum cable tension supported
 
-
-
+Inputs:
 
 
 
