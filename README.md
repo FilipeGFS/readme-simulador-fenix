@@ -220,8 +220,36 @@ Finally, using the drag coefficient collected with the work of the two programs 
 
 ## Recovery 🪂
 
+### 1. Weight Force
 
+### 2. Velocity
 
+### 3. Time
+
+### 4. Max range
+
+### 5. Acceleration
+
+### 6. Nominal Diameter
+
+### 7. Mass Ratio
+
+### 8. Momentum
+
+### 9. Normalized integral 
+
+### 10. Inflation time
+
+### 11. General inflation time
+
+### 12. Drag force
+
+### 13. Opening shock
+
+### 14. Maximum force
+
+### 15. Cable tension
+Returns the boleans based on the relation for the maximum force and the maximum cable tension supported
 
 
 
