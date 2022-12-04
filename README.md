@@ -156,7 +156,9 @@ the files restrained in this folder.
 
 This file calculates the angular velocity of the model. Using the velocity of the rocket and its angle of attack, it multiplies the first by the sin() of the
 second, which returns  the angular velocity.
+
 ![image](https://user-images.githubusercontent.com/119083049/205468607-17e3008e-7d16-4fde-8293-d3c7b9536fe9.png)
+
 *Angular velocity calculus*
 
 
@@ -164,7 +166,9 @@ second, which returns  the angular velocity.
 
 Through this code, we're able to estimate the center of pressure of each component of the rocket seperately. It receives the base area, the top area, the component 
 volume and its length to calculate this coordinate.
+
 ![image](https://user-images.githubusercontent.com/119083049/205468808-b5134961-dd94-41b4-981d-1963ac27862e.png)
+
 *CP of one component function*
 
 ### 3. *Critical Reynolds number* code
@@ -176,7 +180,9 @@ rocket length. This parameter is important for us to understand the behavior of 
 
 The code in this file considers that the air flow is perpendicular to the fin chord and, by this mean, calculates the fin drag in function of the mach number
 of the rocket.
+
 ![image](https://user-images.githubusercontent.com/119083049/205469113-fa4a8cfe-8934-48d7-a106-fc84dbff6d8f.png)
+
 *Fin drag code snippet*
 
 ### 5. *Lift effect* code
@@ -184,6 +190,7 @@ of the rocket.
 By manipulating the parameters of cilinder length, cilinder diameter, reference area and angle of attack, this code returns us the  normal force coefficient.
 
 ![image](https://user-images.githubusercontent.com/119083049/205469251-d7b28b2e-3586-4b26-8639-a42d9767ea3d.png)
+
 *Lift effect code*
 
 
