@@ -147,7 +147,7 @@ Some examples of operations using the class **Vector**:
 
 <img src="https://user-images.githubusercontent.com/92520893/205452599-0f47b5c9-0bb3-42b7-926a-bb99e8648efb.jpeg">
 
-## Aerodynamic ✈️
+## Aerodynamic 💨
 
 ## Propulsion 🚀
 
