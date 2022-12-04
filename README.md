@@ -220,6 +220,16 @@ Finally, using the drag coefficient collected with the work of the two programs 
 
 ## Recovery 🪂
 
+
+
+
+
+
+
+
+
+
+
 ## Structure 🧱
 
 The Structure folder holds codes for the calculus of diverse tension and stress types, as well as of information got from the input dimensions of the
