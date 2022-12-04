@@ -227,7 +227,7 @@ Inputs:
 + **'mass'**
 +**'gravity'**
 
-the weight is a  basical variable for other calculations
+the weight is a basic variable for other calculations
 
 Outputs:
 + **'Weight_force'**
@@ -236,67 +236,204 @@ Outputs:
 the velocity on the vertical axis, based on the initial velocity when the parachute is deployed and for the acceleration resultant from the forces calculated.
 
 Inputs:
-+ **'
+
++ **’velocity0’**
++**'time’**
++**’acceleration’**
+
+Output:
+
++ **’velocity’**
+
+Velocity calculation is independent from the trajectory made, an approximation made basically from the resultant of the forces and the time of falling
 
 ### 3. Time
 the time is defined by the remaining time from the height where the parachute is ejectred until the rocket touches the ground
 
 Inputs:
++ **'initial_vertical_position'**
++**'max_speed'**
+
+Output:
+
++**'time'**
+
+The time used here is also an aproximation, for this we use the maximum speed, that is based from the structure parameters for the speed when the rocket reachs the ground.
+
 
 ### 4. Max range
 Max range is basically an calculation using the parameters from velocity and the time to make an aproximation for the maximum range of distance that the rocket can go when falling
 
 Inputs:
++ **'velocity'**
++**'time'**
+
+Outputs:
++ **'max_range'**
+
 
 ### 5. Acceleration
 the acceleration that affects the rocket is described by the Second Newton's Law 
 
 Inputs:
++ **'Weight_force'**
++**'parachute_drag_force'**
++**'mass'**
+
+Output:
+
++ **'acceleration'**
+
+The acceleration is an calculation based on the resultant of the forces on the parachute, that is the Weight of the system against the drag force wich is calculated how it follows.
 
 ### 6. Nominal Diameter
 
-Inputs:
+Input:
++ **'transversal_section_area'**
+
+Output:
+
++ **'nominal_Diameter'**
+
+The nominal diameter is a aproximation made from the total area of the parachute, so it is basically the diameter of a parachute of the area speciffied but on circular shape (it independs from the actual parachute shape).
 
 ### 7. Mass Ratio
+The inverted mass ratio plotted against the opening shock coefficient
 
 Inputs:
++ **'air_density'**
++**'transversal_section_area'**
++**'mass'**
+
+Output:
+
++ **'Rm'**
+
+The mass ratio is used to calculate the opening shock as the variables from 8 to 11 that follows
+
 
 ### 8. Momentum
+the momentum of the parachute has two states, one for the angle in horizontal, and one in vertical, for the present calculations we are going to use only the vertical momentum.
 
 Inputs:
++ **'final_speed'**
++**'initial_speed'**
++**'g'**
++**'tfill'**
+
+Output:
++ **'momentum'**
+
 
 ### 9. Normalized integral 
+The normalized integral is the aproximation made from the graphs of OSCalc that specify three different states, depending from de Inverted Mass Ratio.
 
-Inputs:
+
+Input:
++ **'Rm'**
+
+Output:
+
++ **'If'**
+
+As said previously, there are two different graphs we can make with different patterns when plotting the Inverted Mass Ratio against the Opening Shock, so depending from the Rm we are going to consider two different If.
+
+![image](https://user-images.githubusercontent.com/98179873/205506324-a8d01c19-e7f1-43ee-bbd1-358a576f9d69.png)
 
 ### 10. Inflation time
+the inflation time is a data that we can estimate from experimental results that bases on filling time.
 
 Inputs:
++ **'stretch_speed'**
++**'tfill'**
++**'nominal_Diameter'**
+
+Output:
+
++ **'inflation_time'**
+
+The inflation time is a dimensional variable that is made from the filling time (tfill), based on stretch speed whose is the payload speed, details on the image:
+
+![image](https://user-images.githubusercontent.com/98179873/205506288-f0ffaf26-4971-4e09-b96e-8f94a844139c.png)
 
 ### 11. General inflation time
+the general inflation time is an arbitrary adimensional value based on inflation time
 
 Inputs:
++ **'inflation_time'**
++**'nominal_diameter'**
++**'If'**
++'**transversal_section_area'**
+
+Output:
+
++ **'general_Inflation_time'**
+
+The same way of the inflation time, the general inflation time is calculated based on the other experimental data, but this is a non_dimensional variable.
 
 ### 12. Drag force
+ the drag force is calculated with the use of many variables such as the drag coefficient, representing the flow of air by the parachute fibers.
 
 Inputs:
++ **'air_density'**
++**'transversal_section_area'**
++**'drag_coefficient'**
++**'velocity'**
+
+Output:
+
++ **'drag_force'**
+
+The drag force uses the drag coefficient, wich is an experimental data, so in the code we are using general drag coefficient aproximations from research, the limitation of the code is the total of parachute data we could acomodate
+
+![image](https://user-images.githubusercontent.com/98179873/205506155-6d12bb8e-86a7-464a-86c4-9b8285b83224.png)
+
 
 ### 13. Opening shock
+the opening shock is the factor that determines the maximum force that affects the parachute
 
 Inputs:
++ **'mass_ratio'**
++**'general_Inflation_time'**
++**'Integral'**
+
+Output:
+
++ **'opening_shock
+
+Based on the data and the calculations made until now the opening shock coefficient is a variable that our code ir assumed to get.
 
 ### 14. Maximum force
-
+Maximum force is basically the maximum force that the system is going to be exposed during the flight
 Inputs:
++ **'parachute_drag_force'**
++**'opening_shock'**
+
+Output:
++ **'maximum_force'**
+
+The maximum force is a simple multiplication of the opening shock coefficient for the parachute drag force, so that it is a algebraic variable
 
 ### 15. Cable tension
 Returns the boleans based on the relation for the maximum force and the maximum cable tension supported
 
 Inputs:
++ **'cable_number'**
++**'cable_area'**
++**'maximum_force'**
++**'safe_load'**
 
+Output:
 
+True or False
 
+The code here has two parts, one that determines the cable tension that the recovery is making in each hope, and the second part compares this value to the resistance of the cables, returning True if it is suposed to break or false if it doesn´t.
 
+![image](https://user-images.githubusercontent.com/98179873/205506181-5c6312a0-eda5-457c-9c64-7ea5b193af0f.png)
+The materials of cables supported by the actual code
+
+![image](https://user-images.githubusercontent.com/98179873/205506209-bf5b0d76-3997-4f03-b579-e12ce3406025.png)
+The code that tests the cables based on the maximum force.
 
 ## Structure 🧱
 
