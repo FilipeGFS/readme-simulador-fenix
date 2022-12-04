@@ -148,15 +148,44 @@ Some examples of operations using the class **Vector**:
 <img src="https://user-images.githubusercontent.com/92520893/205452599-0f47b5c9-0bb3-42b7-926a-bb99e8648efb.jpeg">
 
 ## Aerodynamic 💨
-### 1. 
+Aerodynamic deals with the result of the interaction of the air and a rigid body during the occurrence of a flow between them. It is, for obvious reasons,
+indispensable for a model rocket project, once it influences hardly on its stability, apogee, trajectory and other parameters. Next, we describe briefly some of
+the files restrained in this folder.
 
-### 2.
+### 1. *Angular velocity* code
 
-### 3.
+This file calculates the angular velocity of the model. Using the velocity of the rocket and its angle of attack, it multiplies the first by the sin() of the
+second, which returns  the angular velocity.
+![image](https://user-images.githubusercontent.com/119083049/205468607-17e3008e-7d16-4fde-8293-d3c7b9536fe9.png)
+*Angular velocity calculus*
 
-### 4.
 
-### 5.
+### 2. *CP of one body component* code
+
+Through this code, we're able to estimate the center of pressure of each component of the rocket seperately. It receives the base area, the top area, the component 
+volume and its length to calculate this coordinate.
+![image](https://user-images.githubusercontent.com/119083049/205468808-b5134961-dd94-41b4-981d-1963ac27862e.png)
+*CP of one component function*
+
+### 3. *Critical Reynolds number* code
+
+Using the functions contained in this archive, the simulator is able to calculate the expected critical Reynolds number through the material roughness and the
+rocket length. This parameter is important for us to understand the behavior of the model in an air flow.
+
+### 4. *Fin drag* code
+
+The code in this file considers that the air flow is perpendicular to the fin chord and, by this mean, calculates the fin drag in function of the mach number
+of the rocket.
+![image](https://user-images.githubusercontent.com/119083049/205469113-fa4a8cfe-8934-48d7-a106-fc84dbff6d8f.png)
+*Fin drag code snippet*
+
+### 5. *Lift effect* code
+
+By manipulating the parameters of cilinder length, cilinder diameter, reference area and angle of attack, this code returns us the  normal force coefficient.
+
+![image](https://user-images.githubusercontent.com/119083049/205469251-d7b28b2e-3586-4b26-8639-a42d9767ea3d.png)
+*Lift effect code*
+
 
 ### Match Number
 A simple method to return the match number, important for the calculations ahead, using the velocity of the rocket divided by the local sound velocity.
