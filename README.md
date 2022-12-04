@@ -194,8 +194,8 @@ By manipulating the parameters of cilinder length, cilinder diameter, reference 
 *Lift effect code*
 
 
-### Match Number
-A simple method to return the match number, important for the calculations ahead, using the velocity of the rocket divided by the local sound velocity.
+### Mach Number
+A simple method to return the mach number, important for the calculations ahead, using the velocity of the rocket divided by the local sound velocity.
 
 <img src="https://user-images.githubusercontent.com/92520893/205469116-3ea97332-1964-4c54-a941-74c268e58308.png">
 
@@ -208,7 +208,7 @@ Reynolds number is used to determine the type of flow pattern as laminar or turb
 <img src="https://user-images.githubusercontent.com/92520893/205469174-2e62b19e-66b9-4380-9916-ecaf6dd3eafa.png">
 
 ### Skin Friction
-This file will return the drag coefficient according to the match number, using the reynolds number, and will not be able to do so if the rocket is supersonic.
+This file will return the drag coefficient according to the mach number, using the reynolds number, and will not be able to do so if the rocket is supersonic.
 
 ### Total Skin Friction Drag Coefficient
 Finally, using the drag coefficient collected with the work of the two programs above, this method will return the total friction drag coefficient applied on the full body of the rocket.
