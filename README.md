@@ -221,12 +221,16 @@ Finally, using the drag coefficient collected with the work of the two programs 
 ## Recovery 🪂
 
 ### 1. Weight Force
+the weight force is the product of the mass and the gravity acceleration, as described by the second Newton's Law
 
 ### 2. Velocity
+the velocity on the vertical axis, based on the initial velocity when the parachute is deployed and for the acceleration resultant from the forces calculated.
 
 ### 3. Time
+the time is defined by the remaining time from the height where the parachute is ejectred until the rocket touches the ground
 
 ### 4. Max range
+Max range is basically an calculation using the parameters from velocity and the time to make an aproximation for the maximum range of distance that the rocket can go when falling
 
 ### 5. Acceleration
 
