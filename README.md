@@ -337,7 +337,7 @@ simulation. This class has a lot of especial functions that will be briefly desc
 
 With this part of the code, we're able to simulate properly, as we wanted.
 
-## Accessing th Project 🖿
+## Accessing the Project 🖿
 
 [1] First, copy the link to the repository <https://github.com/Rocket-Simulator/RocketSimulator>.
 
