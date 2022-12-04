@@ -50,11 +50,12 @@ data. We also have codes with fundamental constants needed and wind information 
 ![image](https://user-images.githubusercontent.com/119083049/205337967-7099a96a-3698-4480-b9dd-23fade6ae09e.png)
 
 *Wind direction class code*
+
+## Physics ⚛️
+
 <p align = "center">
   <img src= "https://user-images.githubusercontent.com/92520893/205438398-9d39c119-bc8a-4aa3-93d1-9287b9f822d9.jpeg">
 </p>
-
-## Physics ⚛️
 
 Physics is a very important folder for the project, being responsible for bringing together most of the variables and functions that operate basic physics, or classical mechanics as it is commonly called. This section holds the programming that deals with the forces applied to the rocket, as well as vectors, which orient the forces and their direction, torque, coordinates, and more.
 ### forces
@@ -194,23 +195,23 @@ By manipulating the parameters of cilinder length, cilinder diameter, reference 
 *Lift effect code*
 
 
-### Mach Number
+### 6. Mach Number
 A simple method to return the mach number, important for the calculations ahead, using the velocity of the rocket divided by the local sound velocity.
 
 <img src="https://user-images.githubusercontent.com/92520893/205469116-3ea97332-1964-4c54-a941-74c268e58308.png">
 
-### Nose Pressure Drag
+### 7. Nose Pressure Drag
 If the transition batween the body of the rocket and the nose is smooth, the nose pressure drag coefficient is equal to zero. But if the transition has a conical shape, "bodynoseAngle" will be an argument used to calculate the pressure drag on the nose.
 
-### Reynoulds Number
+### 8. Reynoulds Number
 Reynolds number is used to determine the type of flow pattern as laminar or turbulent while flowing through a pipe, and it's calculated by the **reynolds_number** method. It's a simple file in the project, but very important.
 
 <img src="https://user-images.githubusercontent.com/92520893/205469174-2e62b19e-66b9-4380-9916-ecaf6dd3eafa.png">
 
-### Skin Friction
+### 9. Skin Friction
 This file will return the drag coefficient according to the mach number, using the reynolds number, and will not be able to do so if the rocket is supersonic.
 
-### Total Skin Friction Drag Coefficient
+### 10. Total Skin Friction Drag Coefficient
 Finally, using the drag coefficient collected with the work of the two programs above, this method will return the total friction drag coefficient applied on the full body of the rocket.
 
 <img src="https://user-images.githubusercontent.com/92520893/205469183-6f401e2e-0697-4efc-97fa-06917c96f901.png">
