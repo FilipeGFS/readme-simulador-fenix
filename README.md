@@ -218,6 +218,38 @@ Finally, using the drag coefficient collected with the work of the two programs 
 
 ## Propulsion 🚀
 
+## 1. Flow Area
+
+This function calculates the area of flow for the combustion products based on the volumetric load. 
+
+Inputs:
+
+ d (num): internal diameter of the grain.
+ Vl (num): volumetric loading fraction.
+ 
+## 2. Burning Area
+
+The burning area of the propellent grain is the product of pi and diameter squared.
+
+Input: diamter
+
+## 3. Burning Time 
+
+The burning time of the grain is the quocient of the external diameter of the grain minus the internal diameter of the grain by two times the grains´ burning rate.
+
+Input: grains´external diamenter, grain's internal diameter and grains' burning rate
+
+## 4. Chamber Pressure
+ This function calculates chamber pressure. Its dependence on time is based on the burn area of the propellant grain (relevant consideration to be used in a derivative in another function).
+     
+    Inputs:  burning area of the propellant grain,  popellant's density, burn rate coefficient (determined by the propellant chosen), throat area, isentropic exponent (determined by the propellant chosen), molar gas constant, combustion temperature, pressure exponent (determined by the propellant chosen).
+    
+## 5. combustion chamber volume
+    
+    The combustion chamber volume is the product 
+
+
+
 ## Recovery 🪂
 
 ### 1. Weight Force
