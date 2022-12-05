@@ -220,7 +220,7 @@ Finally, using the drag coefficient collected with the work of the two programs 
 
 ## 1. Flow Area
 
-This function calculates the area of flow for the combustion products based on the volumetric load. 
+The function in this file calculates the area of flow for the combustion products based on the volumetric load. 
 
 Inputs:
 
@@ -228,8 +228,7 @@ Inputs:
  Vl (num): volumetric loading fraction.
  
 ## 2. Burning Area
-
-The burning area of the propellent grain is the product of pi and diameter squared.
+ the function of this file calculates the burning area of the propellent grain, that  is the product of pi and diameter squared.
 
 Input: diamter
 
@@ -243,20 +242,48 @@ Input: grains´external diamenter, grain's internal diameter and grains' burning
  
      
 By manipulating the parameters of the burning area of the propellant grain,  popellant's density, burn rate coefficient (determined by the propellant chosen), throat area, isentropic exponent (determined by the propellant chosen), molar gas constant, combustion temperature, pressure exponent (determined by the propellant chosen) it calculates the chamber pressure.
+
     
 ## 5. combustion chamber volume
- By manipulating the parameter of the combustion chamber diameter and combustion chamber lenght this function calculates the combustion chamber volume.
+ By manipulating the parameters of the combustion chamber diameter and combustion chamber lenght this function calculates the combustion chamber volume.
  
 ## 6. Combustion Temperature
 
   It calculates the temparature of the combustion of the grain.
   
   Inputs: 
-  Te(num): temperature at the exit.
-  k(num): isetropic exponent.
-  Me(num): Mach number of flow at the exit.
+  temperature at the exit.
+  isetropic exponent.
+  Mach number of flow at the exit.
 
-## 7. 
+## 7. Flow speed
+
+The function in this file calculates  the flow speed at the exit of the nozzle, by manipulating the parameters of isentropic exponent, combustion temperature of the proppelant, universal gas constant, effective molar mass of the products ,atmosferic pressure and pressure inside the chamber.
+
+## 8. Nozzle Scape diameter
+
+The  function in this file calculates the nozzle escape diameter by manipulating the parameters if medium throat diameter, isentropic exponent, gas escape pressure and chamber pressure.
+    
+## 9. Nozze Exit Area
+ the function in this returns the nozzle exit area. This function require as input  the  diameter of nozzle's exit.
+ 
+## 10. Nozzle throat area
+
+ the function in this returns the nozzle throat area. This function require as input  the  diameter of the nozzle
+ 
+## 11. Propellant Density
+
+The function in this file calculates the propellant density by dividing the propellant mass by it's volume
+
+## 12. Propellant volume
+The function in this file calculates the propellant volume by manipulating the parameters of external diameter ,internal diameter ,segment's lenght, number of segments.
+
+## 13. Throath diameter interval
+ The function in this file calculates the throath diameter interval and has as input the  area of combustion products flow.
+ 
+## 14. Volumetric Loading Fraction
+
+The function in this file calculates the volumetric loading fraction by manipulating the parameters of propellant´s volume and the combustion chamber volume.
 
 
 
