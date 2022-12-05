@@ -228,7 +228,7 @@ Inputs:
  Vl (num): volumetric loading fraction.
  
 ## 2. Burning Area
- the function of this file calculates the burning area of the propellent grain, that  is the product of pi and diameter squared.
+ The function of this file calculates the burning area of the propellent grain, that  is the product of pi and diameter squared.
 
 Input: diamter
 
@@ -265,11 +265,11 @@ The function in this file calculates  the flow speed at the exit of the nozzle, 
 The  function in this file calculates the nozzle escape diameter by manipulating the parameters if medium throat diameter, isentropic exponent, gas escape pressure and chamber pressure.
     
 ## 9. Nozze Exit Area
- the function in this returns the nozzle exit area. This function require as input  the  diameter of nozzle's exit.
+ The function in this returns the nozzle exit area. This function require as input  the  diameter of nozzle's exit.
  
 ## 10. Nozzle throat area
 
- the function in this returns the nozzle throat area. This function require as input  the  diameter of the nozzle
+ The function in this returns the nozzle throat area. This function require as input  the  diameter of the nozzle
  
 ## 11. Propellant Density
 
