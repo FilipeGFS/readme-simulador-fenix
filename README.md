@@ -240,13 +240,23 @@ The burning time of the grain is the quocient of the external diameter of the gr
 Input: grains´external diamenter, grain's internal diameter and grains' burning rate
 
 ## 4. Chamber Pressure
- This function calculates chamber pressure. Its dependence on time is based on the burn area of the propellant grain (relevant consideration to be used in a derivative in another function).
+ 
      
-    Inputs:  burning area of the propellant grain,  popellant's density, burn rate coefficient (determined by the propellant chosen), throat area, isentropic exponent (determined by the propellant chosen), molar gas constant, combustion temperature, pressure exponent (determined by the propellant chosen).
+By manipulating the parameters of the burning area of the propellant grain,  popellant's density, burn rate coefficient (determined by the propellant chosen), throat area, isentropic exponent (determined by the propellant chosen), molar gas constant, combustion temperature, pressure exponent (determined by the propellant chosen) it calculates the chamber pressure.
     
 ## 5. combustion chamber volume
-    
-    The combustion chamber volume is the product 
+ By manipulating the parameter of the combustion chamber diameter and combustion chamber lenght this function calculates the combustion chamber volume.
+ 
+## 6. Combustion Temperature
+
+  It calculates the temparature of the combustion of the grain.
+  
+  Inputs: 
+  Te(num): temperature at the exit.
+  k(num): isetropic exponent.
+  Me(num): Mach number of flow at the exit.
+
+## 7. 
 
 
 
