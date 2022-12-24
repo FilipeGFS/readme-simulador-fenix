@@ -1,7 +1,24 @@
 # FÊNIX MODEL ROCKET SIMULATOR 🚀
 
 ![Fênix logotype](https://scontent.fplu1-1.fna.fbcdn.net/v/t1.6435-9/158499275_124854939643696_884025964079056168_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=e3f864&_nc_ohc=lOiVht85iucAX8OUZSa&_nc_ht=scontent.fplu1-1.fna&oh=00_AfAD0aDwQ5xpZectX7LwkavHNh4Q9nKiNUzxGW8aiksQZQ&oe=63B172A4)
-![Badge](http://img.shields.io/static/v1?label=STATUS&message=IN%20DEVELOPMENT&color=GREEN&style=for-the-badge)
+
+<p align="center">
+  <img alt="GitHub repo status" src="https://img.shields.io/badge/STATUS-IN%20DEVELOPMENT-brightgreen?style=for-the-badge">
+  <a href="https://github.com/Rocket-Simulator/RocketSimulator/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/Rocket-Simulator/RocketSimulator?style=for-the-badge" alt="Contributors">
+  </a>  
+  <a href="https://github.com/Rocket-Simulator/RocketSimulator/stargazers">
+    <img alt="GitHub stars" src="https://img.shields.io/github/stars/Rocket-Simulator/RocketSimulator?style=for-the-badge">
+  </a>
+  <a href="https://github.com/Rocket-Simulator/RocketSimulator/network">
+    <img alt="GitHub forks" src="https://img.shields.io/github/forks/Rocket-Simulator/RocketSimulator?style=for-the-badge">
+  </a>
+  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Rocket-Simulator/RocketSimulator?style=for-the-badge">
+  <a href="https://github.com/Rocket-Simulator/     RocketSimulator/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/Rocket-Simulator/RocketSimulator?style=for-the-badge" >
+  </a>
+</p>
+
 
 This program is a free and open access simulator for model rocketry. With this software, the user will be able to simulate their rocket as a rigid body,
 obtaining important data about it, such as drag force, different drag coefficient types, the position of center of pression, trajectory expected, stress
@@ -23,12 +40,12 @@ Thus, this document is divided in the following topics, defined according to the
 
 The data folder contains some primordial information for the project, with files in JSON format. It is subdivided in folders with the type of data of the
 following table:
-| Folder | Content |
-| ------ | ------- |
-| Cables | Types of cables |
-| Materials | Several materials for the model and its properties, such as aluminum, carbon fiber, etc. |
-| Parachutes | Different kinds of parachute, depending on its geometry, with the info of its drag coefficient |
-| Propellants | Three distinct propellant types with their tecnical features |
+| Folder      | Content                                                                                        |
+| ----------- | ---------------------------------------------------------------------------------------------- |
+| Cables      | Types of cables                                                                                |
+| Materials   | Several materials for the model and its properties, such as aluminum, carbon fiber, etc.       |
+| Parachutes  | Different kinds of parachute, depending on its geometry, with the info of its drag coefficient |
+| Propellants | Three distinct propellant types with their tecnical features                                   |
 
 ![image](https://user-images.githubusercontent.com/119083049/205334940-a6ef751c-301f-4e05-b510-16c5f3a45f61.png)
 
@@ -58,6 +75,7 @@ data. We also have codes with fundamental constants needed and wind information 
 </p>
 
 Physics is a very important folder for the project, being responsible for bringing together most of the variables and functions that operate basic physics, or classical mechanics as it is commonly called. This section holds the programming that deals with the forces applied to the rocket, as well as vectors, which orient the forces and their direction, torque, coordinates, and more.
+
 ### forces
 
 The folder that contains all the forces applied to the rocket through its trajectory, such as: drag, weight and wind force. All classes in this folder inherit from the **Vector** class, so they will all be treated as vectors, having their methods, as they should be.
@@ -138,8 +156,6 @@ def calculate(self, current_state: DeltaTimeSimulation):
         self.setZ(resultant_torque.z())
 ~~~
 
-
-
 ### vector
 
 The vector archive contains all the methods that deals with vector, like getting the scalar or cross product of two vectors, sum and subtraction of vectors, and the magnitude also.
@@ -149,6 +165,7 @@ Some examples of operations using the class **Vector**:
 <img src="https://user-images.githubusercontent.com/92520893/205452599-0f47b5c9-0bb3-42b7-926a-bb99e8648efb.jpeg">
 
 ## Aerodynamic 💨
+
 Aerodynamic deals with the result of the interaction of the air and a rigid body during the occurrence of a flow between them. It is, for obvious reasons,
 indispensable for a model rocket project, once it influences hardly on its stability, apogee, trajectory and other parameters. Next, we describe briefly some of
 the files restrained in this folder.
@@ -162,10 +179,9 @@ second, which returns  the angular velocity.
 
 *Angular velocity calculus*
 
-
 ### 2. *CP of one body component* code
 
-Through this code, we're able to estimate the center of pressure of each component of the rocket seperately. It receives the base area, the top area, the component 
+Through this code, we're able to estimate the center of pressure of each component of the rocket seperately. It receives the base area, the top area, the component
 volume and its length to calculate this coordinate.
 
 ![image](https://user-images.githubusercontent.com/119083049/205468808-b5134961-dd94-41b4-981d-1963ac27862e.png)
@@ -194,24 +210,28 @@ By manipulating the parameters of cilinder length, cilinder diameter, reference 
 
 *Lift effect code*
 
-
 ### 6. *Mach Number* code
+
 A simple method to return the mach number, important for the calculations ahead, using the velocity of the rocket divided by the local sound velocity.
 
 <img src="https://user-images.githubusercontent.com/92520893/205469116-3ea97332-1964-4c54-a941-74c268e58308.png">
 
 ### 7. *Nose Pressure Drag* code
+
 If the transition batween the body of the rocket and the nose is smooth, the nose pressure drag coefficient is equal to zero. But if the transition has a conical shape, "bodynoseAngle" will be an argument used to calculate the pressure drag on the nose.
 
 ### 8. *Reynoulds Number* code
+
 Reynolds number is used to determine the type of flow pattern as laminar or turbulent while flowing through a pipe, and it's calculated by the **reynolds_number** method. It's a simple file in the project, but very important.
 
 <img src="https://user-images.githubusercontent.com/92520893/205469174-2e62b19e-66b9-4380-9916-ecaf6dd3eafa.png">
 
 ### 9. *Skin Friction* code
+
 This file will return the drag coefficient according to the mach number, using the reynolds number, and will not be able to do so if the rocket is supersonic.
 
 ### 10. *Total Skin Friction Drag Coefficient* code
+
 Finally, using the drag coefficient collected with the work of the two programs above, this method will return the total friction drag coefficient applied on the full body of the rocket.
 
 <img src="https://user-images.githubusercontent.com/92520893/205469183-6f401e2e-0697-4efc-97fa-06917c96f901.png">
@@ -220,38 +240,38 @@ Finally, using the drag coefficient collected with the work of the two programs 
 
 ## 1. Flow Area
 
-The function in this file calculates the area of flow for the combustion products based on the volumetric load. 
+The function in this file calculates the area of flow for the combustion products based on the volumetric load.
 
 Inputs:
 
  d (num): internal diameter of the grain.
  Vl (num): volumetric loading fraction.
- 
+
 ## 2. Burning Area
+
  The function of this file calculates the burning area of the propellent grain, that  is the product of pi and diameter squared.
 
 Input: diamter
 
-## 3. Burning Time 
+## 3. Burning Time
 
 The burning time of the grain is the quocient of the external diameter of the grain minus the internal diameter of the grain by two times the grains´ burning rate.
 
 Input: grains´external diamenter, grain's internal diameter and grains' burning rate
 
 ## 4. Chamber Pressure
- 
-     
+
 By manipulating the parameters of the burning area of the propellant grain,  popellant's density, burn rate coefficient (determined by the propellant chosen), throat area, isentropic exponent (determined by the propellant chosen), molar gas constant, combustion temperature, pressure exponent (determined by the propellant chosen) it calculates the chamber pressure.
 
-    
 ## 5. combustion chamber volume
+
  By manipulating the parameters of the combustion chamber diameter and combustion chamber lenght this function calculates the combustion chamber volume.
- 
+
 ## 6. Combustion Temperature
 
   It calculates the temparature of the combustion of the grain.
   
-  Inputs: 
+  Inputs:
   temperature at the exit.
   isetropic exponent.
   Mach number of flow at the exit.
@@ -263,45 +283,50 @@ The function in this file calculates  the flow speed at the exit of the nozzle, 
 ## 8. Nozzle Scape diameter
 
 The  function in this file calculates the nozzle escape diameter by manipulating the parameters if medium throat diameter, isentropic exponent, gas escape pressure and chamber pressure.
-    
+
 ## 9. Nozze Exit Area
+
  The function in this returns the nozzle exit area. This function require as input  the  diameter of nozzle's exit.
- 
+
 ## 10. Nozzle throat area
 
  The function in this returns the nozzle throat area. This function require as input  the  diameter of the nozzle
- 
+
 ## 11. Propellant Density
 
 The function in this file calculates the propellant density by dividing the propellant mass by it's volume
 
 ## 12. Propellant volume
+
 The function in this file calculates the propellant volume by manipulating the parameters of external diameter ,internal diameter ,segment's lenght, number of segments.
 
 ## 13. Throath diameter interval
+
  The function in this file calculates the throath diameter interval and has as input the  area of combustion products flow.
- 
+
 ## 14. Volumetric Loading Fraction
 
 The function in this file calculates the volumetric loading fraction by manipulating the parameters of propellant´s volume and the combustion chamber volume.
 
-
-
 ## Recovery 🪂
 
 ### 1. Weight Force
+
 the weight force is the product of the mass and the gravity acceleration, as described by the second Newton's Law
 
 Inputs:
+
 + **'mass'**
 +**'gravity'**
 
 the weight is a basic variable for other calculations
 
 Outputs:
+
 + **'Weight_force'**
 
 ### 2. Velocity
+
 the velocity on the vertical axis, based on the initial velocity when the parachute is deployed and for the acceleration resultant from the forces calculated.
 
 Inputs:
@@ -317,9 +342,11 @@ Output:
 Velocity calculation is independent from the trajectory made, an approximation made basically from the resultant of the forces and the time of falling
 
 ### 3. Time
+
 the time is defined by the remaining time from the height where the parachute is ejectred until the rocket touches the ground
 
 Inputs:
+
 + **'initial_vertical_position'**
 +**'max_speed'**
 
@@ -329,22 +356,25 @@ Output:
 
 The time used here is also an aproximation, for this we use the maximum speed, that is based from the structure parameters for the speed when the rocket reachs the ground.
 
-
 ### 4. Max range
+
 Max range is basically an calculation using the parameters from velocity and the time to make an aproximation for the maximum range of distance that the rocket can go when falling
 
 Inputs:
+
 + **'velocity'**
 +**'time'**
 
 Outputs:
+
 + **'max_range'**
 
-
 ### 5. Acceleration
-the acceleration that affects the rocket is described by the Second Newton's Law 
+
+the acceleration that affects the rocket is described by the Second Newton's Law
 
 Inputs:
+
 + **'Weight_force'**
 +**'parachute_drag_force'**
 +**'mass'**
@@ -358,6 +388,7 @@ The acceleration is an calculation based on the resultant of the forces on the p
 ### 6. Nominal Diameter
 
 Input:
+
 + **'transversal_section_area'**
 
 Output:
@@ -367,9 +398,11 @@ Output:
 The nominal diameter is a aproximation made from the total area of the parachute, so it is basically the diameter of a parachute of the area speciffied but on circular shape (it independs from the actual parachute shape).
 
 ### 7. Mass Ratio
+
 The inverted mass ratio plotted against the opening shock coefficient
 
 Inputs:
+
 + **'air_density'**
 +**'transversal_section_area'**
 +**'mass'**
@@ -380,25 +413,27 @@ Output:
 
 The mass ratio is used to calculate the opening shock as the variables from 8 to 11 that follows
 
-
 ### 8. Momentum
+
 the momentum of the parachute has two states, one for the angle in horizontal, and one in vertical, for the present calculations we are going to use only the vertical momentum.
 
 Inputs:
+
 + **'final_speed'**
 +**'initial_speed'**
 +**'g'**
 +**'tfill'**
 
 Output:
+
 + **'momentum'**
 
+### 9. Normalized integral
 
-### 9. Normalized integral 
 The normalized integral is the aproximation made from the graphs of OSCalc that specify three different states, depending from de Inverted Mass Ratio.
 
-
 Input:
+
 + **'Rm'**
 
 Output:
@@ -410,9 +445,11 @@ As said previously, there are two different graphs we can make with different pa
 ![image](https://user-images.githubusercontent.com/98179873/205506324-a8d01c19-e7f1-43ee-bbd1-358a576f9d69.png)
 
 ### 10. Inflation time
+
 the inflation time is a data that we can estimate from experimental results that bases on filling time.
 
 Inputs:
+
 + **'stretch_speed'**
 +**'tfill'**
 +**'nominal_Diameter'**
@@ -426,9 +463,11 @@ The inflation time is a dimensional variable that is made from the filling time 
 ![image](https://user-images.githubusercontent.com/98179873/205506288-f0ffaf26-4971-4e09-b96e-8f94a844139c.png)
 
 ### 11. General inflation time
+
 the general inflation time is an arbitrary adimensional value based on inflation time
 
 Inputs:
+
 + **'inflation_time'**
 +**'nominal_diameter'**
 +**'If'**
@@ -441,9 +480,11 @@ Output:
 The same way of the inflation time, the general inflation time is calculated based on the other experimental data, but this is a non_dimensional variable.
 
 ### 12. Drag force
+
  the drag force is calculated with the use of many variables such as the drag coefficient, representing the flow of air by the parachute fibers.
 
 Inputs:
+
 + **'air_density'**
 +**'transversal_section_area'**
 +**'drag_coefficient'**
@@ -457,11 +498,12 @@ The drag force uses the drag coefficient, wich is an experimental data, so in th
 
 ![image](https://user-images.githubusercontent.com/98179873/205506155-6d12bb8e-86a7-464a-86c4-9b8285b83224.png)
 
-
 ### 13. Opening shock
+
 the opening shock is the factor that determines the maximum force that affects the parachute
 
 Inputs:
+
 + **'mass_ratio'**
 +**'general_Inflation_time'**
 +**'Integral'**
@@ -473,20 +515,25 @@ Output:
 Based on the data and the calculations made until now the opening shock coefficient is a variable that our code ir assumed to get.
 
 ### 14. Maximum force
+
 Maximum force is basically the maximum force that the system is going to be exposed during the flight
 Inputs:
+
 + **'parachute_drag_force'**
 +**'opening_shock'**
 
 Output:
+
 + **'maximum_force'**
 
 The maximum force is a simple multiplication of the opening shock coefficient for the parachute drag force, so that it is a algebraic variable
 
 ### 15. Cable tension
+
 Returns the boleans based on the relation for the maximum force and the maximum cable tension supported
 
 Inputs:
+
 + **'cable_number'**
 +**'cable_area'**
 +**'maximum_force'**
@@ -679,14 +726,14 @@ it has atmosphere.
 This is the most extensive code of this folder and is responsible for the simulation itself. in the 'simulation' class, it coordinates the physics
 simulation. This class has a lot of especial functions that will be briefly described in the ensuing table:
 
-| Method | What it does |
-| ------ | ------------ |
-| setupForces() | adds the forces involved in the simulation |
-| tryEjection() | verifies periodically if the parachute must be ejected in that moment and tries to do so |
-| __correctParachuteOrientation() | after ejection, it corrects rocket's orientation to (0,0,1) |
-| simulate() | runs the simulation for a specified range time and using a defined time interval |
-| __applyResultantForce() | applies the resultant force on the body |
-| __applyResultantTorque() | calculates and applies the resultant torque on the body |
+| Method                          | What it does                                                                             |
+| ------------------------------- | ---------------------------------------------------------------------------------------- |
+| setupForces()                   | adds the forces involved in the simulation                                               |
+| tryEjection()                   | verifies periodically if the parachute must be ejected in that moment and tries to do so |
+| __correctParachuteOrientation() | after ejection, it corrects rocket's orientation to (0,0,1)                              |
+| simulate()                      | runs the simulation for a specified range time and using a defined time interval         |
+| __applyResultantForce()         | applies the resultant force on the body                                                  |
+| __applyResultantTorque()        | calculates and applies the resultant torque on the body                                  |
 
 With this part of the code, we're able to simulate properly, as we wanted.
 
